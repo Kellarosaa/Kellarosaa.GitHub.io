@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translate</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+  text-align: left;
+}
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Translate</h1>
+        <select id="language">
+            <option value="en">English</option>
+            <option value="fr">French</option>
+            <option value="ru">Russian</option>
+            <option value="es">Spanish</option>
+            <option value="pt">portuguese</option>
+            <option value="zh">mandarin</option>
+            <option value="hi">hindi</option>
+            <option value="ar">arabic</option>
+            <option value="ge">german</option>
+            <option value="jp">japanese</option>
+            <option value="tr">turkish</option>
+            <option value="kz">Kazakh</option>
+        </select>
+        <textarea id="text" placeholder="Enter text to translate"></textarea>
+        <button onclick="translateText()">Translate</button>
+        <div id="translation"></div>
+        <button onclick="switchLanguage()">Switch Direction</button>
+    </div>
+
+    <script>
+        function translateText() {
+            const text = document.getElementById('text').value;
+            const language = document.getElementById('language').value;
+            const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=${language}&dt=t&q=${text}`;
+            
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    const translatedText = data[0][0][0];
+                    document.getElementById('translation').innerText = translatedText;
+                })
+                .catch(error => console.error('Error:', error));
+        }
+
+        function switchLanguage() {
+            const currentLanguage = document.getElementById('language').value;
+            const text = document.getElementById('text').value;
+            const targetLanguage = currentLanguage === 'en' ? 'en' : 'en';
+            const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=${currentLanguage}&tl=${targetLanguage}&dt=t&q=${text}`;
+            
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    const translatedText = data[0][0][0];
+                    document.getElementById('translation').innerText = translatedText;
+                })
+                .catch(error => console.error('Error:', error));
+        }
+    </script>
+</body>
+</html>
