@@ -1,69 +1,53 @@
 <!DOCTYPE html>
 <html>
-   <head>
-      <title>How to disable scrolling in webpage using window.onscroll method </title>
-      
-      <style>
-      
-       .scrollable-place {
-              height: 1000px;
+<head>
+    <title>Button Dropdown Menu Example</title>
+    <style>
+        .dropdown {
+            position: relative;
+            display: inline-block;
         }
-        h1{
-         color: pink;
-         }
-      </style>
-      
-  </head>
-   
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
 <body>
-      <h1>
-          Disabling Scrolling
-      </h1>
-      
-      <b>
-           How to disable scrolling using JavaScript by the overriding window.onscroll function?
-      </b>
-      
-     <p>
-          Click on the buttons below to enable or disable scrolling.
-     </p>
-      
-     <p class=”scrollable-place”>
-        <button onclick=”disableScroll()”>
-        Disable Scrolling
-        </button>
-     <button onclick=”enableScroll()”>Enable Scrolling
-     </button>
-     </p>
-   
-   <script>
-      function disableScroll() {
-       // Get the current page scroll position in the vertical direction
-      scrollTop =
-          window.pageYOffset || document.documentElement.scrollTop;
-           
-           
- // Get the current page scroll position in the horizontal direction 
- 
-    scrollLeft =
-      window.pageXOffset || document.documentElement.scrollLeft;
-      
-      
-     // if any scroll is attempted,
-    // set this to the previous value
-    window.onscroll = function() {
-     window.scrollTo(scrollLeft, scrollTop);
-    };
-   }
-   
-     function enableScroll() {
-        window.onscroll = function() {};
-    }
-
-   </script>
-
+    <div class="dropdown">
+        <button onclick="toggleDropdown()">Open Menu</button>
+        <div class="dropdown-content" id="dropdown">
+            <a href="#">Option 1</a>
+            <a href="#">Option 2</a>
+            <a href="#">Option 3</a>
+        </div>
+    </div>
+    <script>
+        function toggleDropdown() {
+            var dropdown = document.getElementById("dropdown");
+            if (dropdown.style.display === "block") {
+                dropdown.style.display = "none";
+            } else {
+                dropdown.style.display = "block";
+            }
+        }
+    </script>
 </body>
-   
+</html>
+
 </html>
 <a href="https://kellarosaa.github.io/DogeMinerkk/">
   <button>dogeminer</button>
