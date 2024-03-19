@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+</head>
+<body>
+    <h1>Currency Converter</h1>
+    <label for="amount">Enter Amount (USD):</label>
+    <input type="number" id="amount">
+    <br><br>
+    <label for="currency">Select Currency:</label>
+    <select id="currency">
+        <option value="EUR">Euro (EUR)</option>
+        <option value="JPY">Japanese Yen (JPY)</option>
+        <option value="GBP">British Pound Sterling (GBP)</option>
+        <option value="MXN">Mexican Peso (MXN)</option>
+          <option value="CAD">Canadian Dollar (CAD)</option>
+          <option value="JMD">Jamaican Dollar (JMD)</option>
+          <option value="SGD">Singapore dollar (SGD)</option>
+    </select>
+    <br><br>
+    <button onclick="convertCurrency()">Convert</button>
+    <p id="result"></p>
+
+    <script>
+        function convertCurrency() {
+            const amount = document.getElementById('amount').value;
+            const currency = document.getElementById('currency').value;
+            let convertedAmount;
+
+            switch(currency) {
+                case 'EUR':
+                    convertedAmount = amount * 0.85; // 1 USD to EUR
+                    break;
+                case 'JPY':
+                    convertedAmount = amount * 110.21; // 1 USD to JPY
+                    break;
+                case 'GBP':
+                    convertedAmount = amount * 0.72; // 1 USD to GBP
+                    break;
+                    case 'MXN':
+                    convertedAmount = amount * 17.05; // 1 USD to MXN
+                    break;
+                    case 'CAD':
+                    convertedAmount = amount * 1.35; // 1 USD to CAD
+                    break;
+                    case 'JMD':
+                    convertedAmount = amount * 156.56; // 1 USD to JMD
+                    break;
+                      case 'SGD':
+                    convertedAmount = amount * 1.35; // 1 USD to SGD
+                    break;
+                    case 'SGD':
+                    convertedAmount = amount * 1.35; // 1 USD to SGD
+                    break;
+                default:
+                    convertedAmount = 'Invalid Currency';
+            }
+
+            document.getElementById('result').innerText = `Converted Amount: ${convertedAmount} ${currency}`;
+        }
+    </script>
+</body>
+</html>
