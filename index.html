@@ -45,20 +45,52 @@ body {
     </style>
 </head>
 <body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Menu Example</title>
+    <style>
+        .menu {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 100px;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .menu button {
+            display: block;
+            width: 100%;
+            padding: 8px 16px;
+            text-align: left;
+            border: none;
+            background-color: inherit;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
     <button onclick="toggleMenu()">Open Menu</button>
     <div class="menu" id="menu">
-        <a href="https://example.com">Link 1</a>
-        <a href="https://example.com">Link 2</a>
-        <a href="https://example.com">Link 3</a>
+        <button onclick="performAction1()">Action 1</button>
+        <button onclick="performAction2()">Action 2</button>
+        <button onclick="performAction3()">Action 3</button>
     </div>
     <script>
         function toggleMenu() {
             var menu = document.getElementById("menu");
-            if (menu.style.display === "block") {
-                menu.style.display = "none";
-            } else {
-                menu.style.display = "block";
-            }
+            menu.style.display = (menu.style.display === "block") ? "none" : "block";
+        }
+        function performAction1() {
+            // Code for Action 1
+        }
+        function performAction2() {
+            // Code for Action 2
+        }
+        function performAction3() {
+            // Code for Action 3
         }
     </script>
 </body>
@@ -92,3 +124,9 @@ body, html {
 <div class="item owl-bg-img" style="background-image:url('https://raw.githubusercontent.com/Kellarosaa/Kellarosaa.GitHub.io/main/IMG_2138.jpg');">​
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
