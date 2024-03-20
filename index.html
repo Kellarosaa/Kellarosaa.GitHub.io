@@ -13,53 +13,67 @@ body {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alkol OS</title>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hidden Buttons</title>
+<style>
+  .hidden {
+    display: none;
+  }
+</style>
+</head>
+<body>
+<button onclick="toggleVisibility()">Menu Button</button>
+<button class="hidden">Button 1</button>
+<button class="hidden">Button 2</button>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Script Execution</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  #fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    border: none;
+  }
+  .fullscreen-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+</style>
 </head>
 <body>
-    <select id="scriptSelector" onchange="executeScript()">
-        <option value="">Select Script</option>
-        <option value="script1">Script 1</option>
-        <option value="script2">Script 2</option>
-        <option value="customScript">Custom Script</option>
-    </select>
-
-    <script>
-        function executeScript() {
-            var selectedScript = document.getElementById("scriptSelector").value;
-            if (selectedScript === "script1") {
-<html>
-<head>
-</head>
-<body>
-    <button onclick="toggleIframe()">open/close phone</button>
-    <iframe id="myIframe" style="display:none;" src="https://appetize.io/embed/xc1w6f1krd589zhp22a0mgftyw?autoplay=false&debug=true&device=ipad9thgeneration&embed=true&launchUrl=exp%3A%2F%2Fexp.host%2F%40iryna_dehtiarenko%2Fmy-first-app%2BCjSVYNgeok&scale=81&screenOnly=false&xDocMsg=true&xdocMsg=true&params=%7B%22EXDevMenuDisableAutoLaunch%22%3Atrue%2C%22EXKernelLaunchUrlDefaultsKey%22%3A%22exp%3A%2F%2Fexp.host%2F%40iryna_dehtiarenko%2Fmy-first-app%2BCjSVYNgeok%22%2C%22EXKernelDisableNuxDefaultsKey%22%3Atrue%7D&osVersion=16.2" style="border:0px #ffffff none;" name="myiFrame" scrolling="no" frameborder="0" marginheight="px" marginwidth="px" height="700px" width="325px" allowfullscreen></iframe>
-    <script>
-        let iframeVisible = false;
-        function toggleIframe() {
-            const iframe = document.getElementById("myIframe");
-            iframe.style.display = iframeVisible ? "none" : "block";
-            iframeVisible = !iframeVisible;
-        }
-    </script>
+<button class="fullscreen-button" onclick="openFullscreen()">Open Fullscreen</button>
+<iframe id="fullscreen"></iframe>
+<script>
+  function openFullscreen() {
+    var iframe = document.getElementById('fullscreen');
+    iframe.src = 'https://appetize.io/embed/xc1w6f1krd589zhp22a0mgftyw?autoplay=false&debug=true&device=ipad9thgeneration&embed=true&launchUrl=exp%3A%2F%2Fexp.host%2F%40iryna_dehtiarenko%2Fmy-first-app%2BCjSVYNgeok&scale=81&screenOnly=false&xDocMsg=true&xdocMsg=true&params=%7B%22EXDevMenuDisableAutoLaunch%22%3Atrue%2C%22EXKernelLaunchUrlDefaultsKey%22%3A%22exp%3A%2F%2Fexp.host%2F%40iryna_dehtiarenko%2Fmy-first-app%2BCjSVYNgeok%22%2C%22EXKernelDisableNuxDefaultsKey%22%3Atrue%7D&osVersion=16.2';
+    iframe.requestFullscreen();
+  }
+</script>
 </body>
 </html>
 
-                alert("Script 1 executed!");
-            } else if (selectedScript === "script2") {
-                // Add your script 2 here
-                alert("Script 2 executed!");
-            } else if (selectedScript === "customScript") {
-                var customScript = prompt("Paste your custom script here:");
-                eval(customScript);
-            }
-        }
-    </script>
+<script>
+function toggleVisibility() {
+  var buttons = document.querySelectorAll('.hidden');
+  buttons.forEach(button => {
+    button.style.display = button.style.display === 'none' ? 'block' : 'none';
+  });
+}
+</script>
 </body>
 </html>
 
