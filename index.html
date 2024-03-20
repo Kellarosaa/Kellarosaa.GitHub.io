@@ -84,3 +84,30 @@ body {
 
 </html>
 <button style="position: absolute; top: 700px; left: 75px">search engine</button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save and Load Button</title>
+</head>
+<body>
+    <button onclick="saveProgress()">Save Progress</button>
+    <button onclick="loadProgress()">Load Progress</button>
+
+    <script>
+        function saveProgress() {
+            // Save progress to local storage
+            localStorage.setItem('progress', 'Your progress data here');
+            alert("Progress saved!");
+        }
+
+        function loadProgress() {
+            // Load progress from local storage
+            const progress = localStorage.getItem('progress');
+            alert("Progress loaded: " + progress);
+        }
+    </script>
+</body>
+</html>
