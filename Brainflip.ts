@@ -1,35 +1,13 @@
-```typescript
-import React, { useState } from "react";
+const iframe = document.createElement('iframe');
+iframe.src = 'https://bf-gen.vercel.app/';
+iframe.style.border = '0px #ffffff none';
+iframe.name = 'myiFrame';
+iframe.scrolling = 'no';
+iframe.frameBorder = '1';
+iframe.marginHeight = '0px';
+iframe.marginWidth = '0px';
+iframe.height = '740px';
+iframe.width = '1100px';
+iframe.allowFullscreen = true;
 
-const App = () => {
-  const [showIframe, setShowIframe] = useState(false);
-
-  const handleButtonClick = () => {
-    setShowIframe(true);
-  };
-
-  return (
-    <div>
-      <button onClick={handleButtonClick}>Click me</button>
-      {showIframe && (
-        <iframe
-          src="https://bf-gen.vercel.app/"
-          style={{
-            border: "0px #ffffff none",
-            width: "1100px",
-            height: "740px",
-            frameborder: "1",
-            marginheight: "0px",
-            marginwidth: "0px",
-            allowfullscreen: true,
-          }}
-          name="myiFrame"
-          scrolling="no"
-        ></iframe>
-      )}
-    </div>
-  );
-};
-
-export default App;
-```
+document.body.appendChild(iframe);
