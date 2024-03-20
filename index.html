@@ -16,60 +16,36 @@ body {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Interactive Menu</title>
-<style>
-    .menu {
-        position: fixed;
-        bottom: 10px;
-        left: 10px;
-        background: #f0f0f0;
-        padding: 10px;
-        border-radius: 5px;
-        display: none; /* Initially hidden */
-    }
-    .menu button {
-        display: block;
-        margin-bottom: 5px;
-        padding: 5px 10px;
-        background: #3498db;
-        color: #fff;
-        border: none;
-        border-radius: 3px;
-        cursor: pointer;
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown Menu with Script Buttons</title>
+    <script>
+        function runScript1() {
+            alert('Script 1 executed!');
+        }
+
+        function runScript2() {
+            alert('Script 2 executed!');
+        }
+
+        function runScript3() {
+            alert('Script 3 executed!');
+        }
+    </script>
 </head>
 <body>
-<div class="menu" id="menu">
-    <button onclick="toggleMenu()">Open Menu</button>
-    <button onclick="runCode1()">Action 1</button>
-    <button onclick="runCode2()">Action 2</button>
-    <button onclick="runCode3()">Action 3</button>
-</div>
-
-<script>
-    function toggleMenu() {
-        var menu = document.getElementById("menu");
-        menu.style.display = (menu.style.display === "none") ? "block" : "none";
-    }
-
-    function runCode1() {
-        // Code for Action 1
-    }
-
-    function runCode2() {
-        // Code for Action 2
-    }
-
-    function runCode3() {
-        // Code for Action 3
-    }
-</script>
+    <h1>Dropdown Menu with Script Buttons</h1>
+    <div class="dropdown">
+        <button class="dropbtn">Select Script</button>
+        <div class="dropdown-content">
+            <button onclick="runScript1()">Script 1</button>
+            <button onclick="runScript2()">Script 2</button>
+            <button onclick="runScript3()">Script 3</button>
+        </div>
+    </div>
 </body>
 </html>
-
 
   <!DOCTYPE html>
 <html>
