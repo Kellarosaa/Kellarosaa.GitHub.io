@@ -13,59 +13,6 @@ body {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alkol OS</title>
-<style>
-    .menu {
-        position: fixed;
-        bottom: 10px;
-        left: 10px;
-        background: #f0f0f0;
-        padding: 10px;
-        border-radius: 5px;
-        display: none; /* Initially hidden */
-        transition: all 0.3s ease; /* Smooth transition */
-    }
-</style>
-
-<script>
-    function toggleMenu() {
-        var menu = document.getElementById("menu");
-        if (menu.style.maxHeight) {
-            menu.style.maxHeight = null;
-        } else {
-            menu.style.maxHeight = menu.scrollHeight + "px";
-        }
-    }
-</script>
-<style>
-    .menu {
-        position: fixed;
-        bottom: 10px;
-        left: 10px;
-        background: #f0f0f0;
-        padding: 10px;
-        border-radius: 5px;
-        display: none; /* Initially hidden */
-        opacity: 0;
-        transition: opacity 0.3s ease; /* Smooth fade transition */
-    }
-</style>
-
-<script>
-    function toggleMenu() {
-        var menu = document.getElementById("menu");
-        if (menu.style.opacity === "0") {
-            menu.style.display = "block";
-            setTimeout(function() {
-                menu.style.opacity = "1";
-            }, 10); // Delay for smooth transition
-        } else {
-            menu.style.opacity = "0";
-            setTimeout(function() {
-                menu.style.display = "none";
-            }, 300); // Fade out before hiding
-        }
-    }
-</script>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -122,6 +69,7 @@ body {
 </script>
 </body>
 </html>
+
 
   <!DOCTYPE html>
 <html>
