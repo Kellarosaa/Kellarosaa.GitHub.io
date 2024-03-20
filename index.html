@@ -13,86 +13,115 @@ body {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alkol OS</title>
-    <!DOCTYPE html>
+<style>
+    .menu {
+        position: fixed;
+        bottom: 10px;
+        left: 10px;
+        background: #f0f0f0;
+        padding: 10px;
+        border-radius: 5px;
+        display: none; /* Initially hidden */
+        transition: all 0.3s ease; /* Smooth transition */
+    }
+</style>
+
+<script>
+    function toggleMenu() {
+        var menu = document.getElementById("menu");
+        if (menu.style.maxHeight) {
+            menu.style.maxHeight = null;
+        } else {
+            menu.style.maxHeight = menu.scrollHeight + "px";
+        }
+    }
+</script>
+<style>
+    .menu {
+        position: fixed;
+        bottom: 10px;
+        left: 10px;
+        background: #f0f0f0;
+        padding: 10px;
+        border-radius: 5px;
+        display: none; /* Initially hidden */
+        opacity: 0;
+        transition: opacity 0.3s ease; /* Smooth fade transition */
+    }
+</style>
+
+<script>
+    function toggleMenu() {
+        var menu = document.getElementById("menu");
+        if (menu.style.opacity === "0") {
+            menu.style.display = "block";
+            setTimeout(function() {
+                menu.style.opacity = "1";
+            }, 10); // Delay for smooth transition
+        } else {
+            menu.style.opacity = "0";
+            setTimeout(function() {
+                menu.style.display = "none";
+            }, 300); // Fade out before hiding
+        }
+    }
+</script>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Animated Menu</title>
+<title>Interactive Menu</title>
 <style>
-  .menu {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    background-color: #f1f1f1;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    display: none;
-    transition: all 0.3s ease;
-  }
-  .menu.open {
-    display: block;
-  }
-  .menu button {
-    display: block;
-    margin-bottom: 5px;
-  }
+    .menu {
+        position: fixed;
+        bottom: 10px;
+        left: 10px;
+        background: #f0f0f0;
+        padding: 10px;
+        border-radius: 5px;
+        display: none; /* Initially hidden */
+    }
+    .menu button {
+        display: block;
+        margin-bottom: 5px;
+        padding: 5px 10px;
+        background: #3498db;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
 </style>
 </head>
 <body>
 <div class="menu" id="menu">
-  <button onclick="runCode('Action 1')">Action 1</button>
-  <button onclick="runCode('Action 2')">Action 2</button>
-  <button onclick="runCode('Action 3')">Action 3</button>
+    <button onclick="toggleMenu()">Open Menu</button>
+    <button onclick="runCode1()">Action 1</button>
+    <button onclick="runCode2()">Action 2</button>
+    <button onclick="runCode3()">Action 3</button>
 </div>
-<button onclick="toggleMenu()">Open Menu</button>
 
 <script>
-  function toggleMenu() {
-    const menu = document.getElementById('menu');
-    menu.classList.toggle('open');
-  }
-.menu {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  background-color: #f1f1f1;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 10px;
-  display: none;
-  transition: all 0.3s ease;
-  transform: translateY(100%);
-}
+    function toggleMenu() {
+        var menu = document.getElementById("menu");
+        menu.style.display = (menu.style.display === "none") ? "block" : "none";
+    }
 
-.menu.open {
-  display: block;
-  transform: translateY(0);
-}
+    function runCode1() {
+        // Code for Action 1
+    }
 
-  }
+    function runCode2() {
+        // Code for Action 2
+    }
+
+    function runCode3() {
+        // Code for Action 3
+    }
 </script>
 </body>
 </html>
-function runCode(action) {
-  switch (action) {
-    case 'Action 1':
-      // Code block for Action 1
-      alert('Executing Action 1');
-      break;
-    case 'Action 2':
-      // Code block for Action 2
-      alert('Executing Action 2');
-      break;
-    case 'Action 3':
-      // Code block for Action 3
-      alert('Executing Action 3');
-      break;
-    default:
-      alert('Unknown Action');
-  }
-}
 
   <!DOCTYPE html>
 <html>
