@@ -19,18 +19,20 @@ body {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dropdown Menu with Script Buttons</title>
+    <title>Script Execution</title>
+</head>
+<body>
+    <select id="scriptSelector" onchange="executeScript()">
+        <option value="">Select Script</option>
+        <option value="script1">Script 1</option>
+        <option value="script2">Script 2</option>
+        <option value="customScript">Custom Script</option>
+    </select>
+
     <script>
-        function runScript1() {
-            alert('Script 1 executed!');
-        }
-
-        function runScript2() {
-            alert('Script 2 executed!');
-        }
-
-        function runScript3() {
-            <!DOCTYPE html>
+        function executeScript() {
+            var selectedScript = document.getElementById("scriptSelector").value;
+            if (selectedScript === "script1") {
 <html>
 <head>
 </head>
@@ -46,22 +48,21 @@ body {
         }
     </script>
 </body>
-</html>;
+</html>
+
+                alert("Script 1 executed!");
+            } else if (selectedScript === "script2") {
+                // Add your script 2 here
+                alert("Script 2 executed!");
+            } else if (selectedScript === "customScript") {
+                var customScript = prompt("Paste your custom script here:");
+                eval(customScript);
+            }
         }
     </script>
-</head>
-<body>
-    <h1>Dropdown Menu with Script Buttons</h1>
-    <div class="dropdown">
-        <button class="dropbtn">Select Script</button>
-        <div class="dropdown-content">
-            <button onclick="runScript1()">Script 1</button>
-            <button onclick="runScript2()">Script 2</button>
-            <button onclick="runScript3()">Script 3</button>
-        </div>
-    </div>
 </body>
 </html>
+
 
 </html>
 <button style="position: absolute; top: 700px; left: 75px">search engine</button>
