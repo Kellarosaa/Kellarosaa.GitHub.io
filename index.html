@@ -14,67 +14,22 @@ body {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alkol OS</title>
     <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Button-triggered Menu</title>
-    <style>
-        .menu {
-            display: none;
-            position: fixed;
-            bottom: 10px;
-            right: 10px;
-            background: #f9f9f9;
-            border: 1px solid #ccc;
-            padding: 10px;
-        }
-    </style>
 </head>
 <body>
-    <button onclick="toggleMenu()">Open Menu</button>
-    <div class="menu" id="menu">
-        <a href="#">Action 1</a><br>
-        <a href="#">Action 2</a><br>
-        <a href="#">Action 3</a>
-    </div>
+    <button onclick="toggleIframe()">open/close phone</button>
+    <iframe id="myIframe" style="display:none;" src="https://appetize.io/embed/xc1w6f1krd589zhp22a0mgftyw?autoplay=false&debug=true&device=ipad9thgeneration&embed=true&launchUrl=exp%3A%2F%2Fexp.host%2F%40iryna_dehtiarenko%2Fmy-first-app%2BCjSVYNgeok&scale=81&screenOnly=false&xDocMsg=true&xdocMsg=true&params=%7B%22EXDevMenuDisableAutoLaunch%22%3Atrue%2C%22EXKernelLaunchUrlDefaultsKey%22%3A%22exp%3A%2F%2Fexp.host%2F%40iryna_dehtiarenko%2Fmy-first-app%2BCjSVYNgeok%22%2C%22EXKernelDisableNuxDefaultsKey%22%3Atrue%7D&osVersion=16.2" style="border:0px #ffffff none;" name="myiFrame" scrolling="no" frameborder="0" marginheight="px" marginwidth="px" height="700px" width="325px" allowfullscreen></iframe>
     <script>
-        function toggleMenu() {
-            var menu = document.getElementById("menu");
-            if (menu.style.display === "none") {
-                menu.style.display = "block";
-            } else {
-                menu.style.display = "none";
-            }
+        let iframeVisible = false;
+        function toggleIframe() {
+            const iframe = document.getElementById("myIframe");
+            iframe.style.display = iframeVisible ? "none" : "block";
+            iframeVisible = !iframeVisible;
         }
     </script>
 </body>
 </html>
-<style>
-    .menu {
-        display: none;
-        position: fixed;
-        bottom: 10px;
-        right: 10px;
-        background: #f9f9f9;
-        border: 1px solid #ccc;
-        padding: 10px;
-        transition: transform 0.3s ease-in-out;
-        transform: translateY(100%);
-    }
-
-    .menu.active {
-        transform: translateY(0);
-    }
-</style>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-    $(document).ready(function() {
-        $(".menu-toggle").click(function() {
-            $(".menu").slideToggle();
-        });
-    });
-</script>
 
 </html>
 <button style="position: absolute; top: 700px; left: 75px">search engine</button>
