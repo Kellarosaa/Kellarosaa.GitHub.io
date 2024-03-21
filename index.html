@@ -37,7 +37,7 @@ html {
             color: white;
             font-size: 14px;
             bottom: 630px;
-            left: 825px;
+            left: 835px;
             transform: translate(-50%, -50%);
             background-color: 000000(0, 0, 0, 0.5);
             padding: 5px;
@@ -49,33 +49,5 @@ html {
         <img src="https://www.simpleimageresizer.com/_uploads/photos/31723f48/IMG_2139_2_50x50.jpeg" alt="My Image" id="myImage">
         <div id="imageText">subway surfers</div>
     </a>
-</body>
-</html>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Save and Load Button</title>
-</head>
-<body>
-    <button onclick="saveProgress()">Save Progress</button>
-    <button onclick="loadProgress()">Load Progress</button>
-
-    <script>
-        function saveProgress() {
-            // Save progress to local storage
-            localStorage.setItem('progress', 'Your progress data here');
-            alert("Progress saved!");
-        }
-
-        function loadProgress() {
-            // Load progress from local storage
-            const progress = localStorage.getItem('progress');
-            alert("Progress loaded: " + progress);
-        }
-    </script>
 </body>
 </html>
