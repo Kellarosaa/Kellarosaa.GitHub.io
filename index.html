@@ -87,12 +87,12 @@ html {
         <iframe src="https://kellarosaa.github.io/js-calculator/" style="border:0px #ffffff none;" name="myiFrame" scrolling="no" frameborder="0" marginheight="-500px" marginwidth="0px" height="600px" width="350px" allowfullscreen></iframe>
     </div>
     <div>
-      <button class="redirect-button" id="triggerImage" onclick="window.location.href='https://kellarosaa.github.io'">close app</button>
+      <button class="redirect-button" id="triggerbutton" onclick="window.location.href='https://kellarosaa.github.io'">close app</button>
     </div>
     <script>
         const triggerImage = document.getElementById('triggerImage');
         const centered = document.getElementById('centered');
-
+        const triggerbutton = document.getElementById('triggerbutton')
         triggerImage.addEventListener('click', () => {
             centered.style.display = 'block';
         });
